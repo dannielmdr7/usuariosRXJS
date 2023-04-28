@@ -22,8 +22,6 @@
       <strong>
         {{ personaje.power }}
       </strong>
-      <span *ngIf="isFirst" class="text-success"> Primero </span>
-      <span *ngIf="isLast" class="text-danger"> Último </span>
     </div>
     <button class="btn btn-danger" (click)="removeCharacter(personaje.id)" >X</button>
   </li>
