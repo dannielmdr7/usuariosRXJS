@@ -1,6 +1,30 @@
 <h3>Listado</h3>
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let personaje of personajes$ | async">
-    {{ personaje.name }} - {{ personaje.power }}
+  <li
+    class="list-group-item d-flex justify-content-between align-items-center"
+    *ngFor="
+      let personaje of personajes$ | async;
+      let i = index;
+      let isFirst = first;
+      let isLast = last
+    "
+    [ngClass]="{
+      'list-group-item-success': isFirst,
+      'list-group-item-danger': isLast
+    }"
+  >
+    <div>
+      <span class="text-primary"> {{ i + 1 }} </span>
+      <span>
+        {{ personaje.name }}
+      </span>
+      - Power:
+      <strong>
+        {{ personaje.power }}
+      </strong>
+      <span *ngIf="isFirst" class="text-success"> Primero </span>
+      <span *ngIf="isLast" class="text-danger"> Último </span>
+    </div>
+    <button class="btn btn-danger" (click)="removeCharacter(personaje.id)" >X</button>
   </li>
 </ul>

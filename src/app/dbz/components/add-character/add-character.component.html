@@ -1,9 +1,19 @@
-<form class="row">
+<form class="row" (ngSubmit)="savePersonaje()">
+
   <input
+    [(ngModel)]="newPersonaje.name"
     class="form-control mb-2"
-    type="text"
+    name="name"
     placeholder="Nombre del personaje"
+    type="text"
   />
-  <input class="form-control mb-2" type="number" placeholder="Poder" />
+  <input
+    [(ngModel)]="newPersonaje.power"
+    class="form-control mb-2"
+    name="power"
+    placeholder="Poder"
+    type="number"
+  />
   <button class="btn btn-primary" type="submit">Agregar</button>
+  <pre> {{ newPersonaje | json }} </pre>
 </form>

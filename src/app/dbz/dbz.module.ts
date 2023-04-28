@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ListadoPersonajesComponent } from './components/listado-personajes/listado-personajes.component';
 import { AddCharacterComponent } from './components/add-character/add-character.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,8 +14,10 @@ import { AddCharacterComponent } from './components/add-character/add-character.
     AddCharacterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
+
   ],
-  exports:[MainPageComponent]
+  exports: [MainPageComponent]
 })
 export class DbzModule { }

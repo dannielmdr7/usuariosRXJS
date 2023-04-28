@@ -1,4 +1,5 @@
-import { createAction,props } from "@ngrx/store";
-import { Personaje } from "../interfaces/dbz.interfaces";
+import { createAction, props } from "@ngrx/store";
+import { PersonajeStore } from "../interfaces/dbz.interfaces";
 
-export const agregarPersonaje = createAction('[Source] Event', props<{personaje:Personaje}>() );
+export const agregarPersonaje = createAction('[DBZModule] Agregar un personaje', props<{personaje:PersonajeStore}>() );
+export const removerPersonaje = createAction('[DBZModule] Remover un personaje', props<{id:string}>() );
