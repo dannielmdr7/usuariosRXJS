@@ -1,5 +1,6 @@
 <h3>Listado</h3>
 <ul class="list-group">
-  <li class="list-group-item">Goku</li>
-  <li class="list-group-item">Vegetta</li>
+  <li class="list-group-item" *ngFor="let personaje of personajes$ | async">
+    {{ personaje.name }} - {{ personaje.power }}
+  </li>
 </ul>
